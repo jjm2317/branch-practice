@@ -1,0 +1,44 @@
+.TodoListItme{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    &:nth-child(even){
+        background: rgb(243, 237, 212);
+    }
+    checkbox{
+        cursor: pointer;
+        flex:1;  //차지할 수 있는 영역 모두 차지
+        display: flex;
+        align-items: center; //세로 중앙 정렬
+        svg{ //아이콘
+            font-size: 1.5rem;
+        }
+        .text{
+            margin-left: 0.5rem;
+            flex:1;
+        }
+        &.checked {   //체크되었을떄
+            svg{
+                color: #6ea9b3;
+            }
+            .text{
+                columns: #adb5bd;
+                text-decoration: line-through;
+            }
+        }
+    }
+    .removed{
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        color: #d1707a;
+        cursor: pointer;
+        &:hover{
+            color:#af3434;
+        }
+    }
+
+    &+& {   //요소사이에 테두리를 더함
+        border-top: 1px solid #dee2e6;
+    }
+}
